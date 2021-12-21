@@ -109,7 +109,10 @@ jacocoTestReport {
 }
 
 project.tasks['sonarqube'].dependsOn jacocoTestReport
-
+def sonarExclusions = [
+  '**/model/**',
+  '**/config/**'
+]
 sonarqube {
   properties {
     property "sonar.projectName", "Family Private Law :: prl-notify"
