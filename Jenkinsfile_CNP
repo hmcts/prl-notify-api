@@ -7,7 +7,6 @@ def product = "prl"
 def component = "notify"
 
 withPipeline(type, product, component) {
-  loadVaultSecrets(secrets)
   enableAksStagingDeployment()
   disableLegacyDeployment()
 
