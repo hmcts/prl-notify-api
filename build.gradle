@@ -113,16 +113,6 @@ def sonarExclusions = [
   '**/model/**',
   '**/config/**'
 ]
-pitest {
-  targetClasses = ['uk.gov.hmcts.reform.notify.*']
-  excludedClasses = ['uk.gov.hmcts.reform.notify.config.*',
-                     'uk.gov.hmcts.reform.notify.domain.*',
-                     'uk.gov.hmcts.reform.notify.exception.*']
-  threads = 10
-  outputFormats = ['XML', 'HTML']
-  timestampedReports = false
-  mutationThreshold = 80
-}
 
 sonarqube {
   properties {
