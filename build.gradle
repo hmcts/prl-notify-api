@@ -100,7 +100,7 @@ pmd {
 }
 
 jacocoTestReport {
-  executionData(test, integration)
+  executionData(test)
   reports {
     xml.required = true
     csv.required = false
@@ -109,6 +109,10 @@ jacocoTestReport {
 }
 
 project.tasks['sonarqube'].dependsOn jacocoTestReport
+def sonarExclusions = [
+  '**/model/**',
+  '**/config/**'
+]
 
 sonarqube {
   properties {
